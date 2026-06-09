@@ -14,17 +14,38 @@ $(window).resize(function() {
 (function($) {
 	$.fn.typewriter = function() {
 		this.each(function() {
-			var $ele = $(this), str = $ele.html(), progress = 0;
-			$ele.html('');
+			var $ele = $(this);
+			var lines = $ele.find('.say').map(function() {
+				return {
+					className: this.className,
+					text: $(this).text()
+				};
+			}).get();
+			var lineIndex = 0;
+			var charIndex = 0;
+
+			$ele.empty();
+			lines.forEach(function(line) {
+				$ele.append($('<span>').addClass(line.className).html('&nbsp;'));
+			});
+
 			var timer = setInterval(function() {
-				var current = str.substr(progress, 1);
-				if (current == '<') {
-					progress = str.indexOf('>', progress) + 1;
-				} else {
-					progress++;
+				var line = lines[lineIndex];
+				var text = line.text.substring(0, charIndex);
+				var cursor = charIndex < line.text.length ? '_' : '';
+
+				$ele.find('.say').eq(lineIndex).text(text + cursor);
+
+				if (charIndex < line.text.length) {
+					charIndex++;
+					return;
 				}
-				$ele.html(str.substring(0, progress) + (progress & 1 ? '_' : ''));
-				if (progress >= str.length) {
+
+				$ele.find('.say').eq(lineIndex).text(line.text);
+				lineIndex++;
+				charIndex = 0;
+
+				if (lineIndex >= lines.length) {
 					clearInterval(timer);
 				}
 			}, 75);
@@ -45,7 +66,7 @@ $(window).resize(function() {
 		var currentDay = currentDate.getDate();
 
 		var years = currentYear - startYear;
-		var months = currentMonth - startMonth + 1;
+		var months = currentMonth - startMonth;
 		var days = currentDay - startDay;
 
 		if (days < 0) {
@@ -77,12 +98,12 @@ $(window).resize(function() {
 			seconds = "0" + seconds;
 		}
 
-		var result = "<span class=\"digit\">" + years + "</span> years, " +
-					"<span class=\"digit\">" + months + "</span> months, " +
-					"<span class=\"digit\">" + days + "</span> days <br>"+
-					"<div class='time-holder'><span class=\"s-digit\">" + hours + "hrs </span> "+
-					"<span class=\"s-digit\">" + minutes + "mins </span> "+
-					"<span class=\"s-digit\">" + seconds + "sec</span><div> ";
+		var result = "<span class=\"digit\">" + years + "</span> años, " +
+					"<span class=\"digit\">" + months + "</span> meses, " +
+					"<span class=\"digit\">" + days + "</span> días <br>"+
+					"<div class='time-holder'><span class=\"s-digit\">" + hours + " hrs </span> "+
+					"<span class=\"s-digit\">" + minutes + " min </span> "+
+					"<span class=\"s-digit\">" + seconds + " seg</span><div> ";
 
 		$("#clock").html(result);
 	}
@@ -106,10 +127,10 @@ $(window).resize(function() {
 // 	if (seconds < 10) {
 // 		seconds = "0" + seconds;
 // 	}
-// 	var result = "Day <span class=\"digit\">" + days + "</span>, " + 
-// 	"<span class=\"digit\">" + hours + "</span> hours, " + 
-// 	"<span class=\"digit\">" + minutes + "</span> minutes, " + 
-// 	"<span class=\"digit\">" + seconds + "</span> seconds";
+// 	var result = "Día <span class=\"digit\">" + days + "</span>, " + 
+// 	"<span class=\"digit\">" + hours + "</span> horas, " + 
+// 	"<span class=\"digit\">" + minutes + "</span> minutos, " + 
+// 	"<span class=\"digit\">" + seconds + "</span> segundos";
 
 // $("#clock").html(result);
 

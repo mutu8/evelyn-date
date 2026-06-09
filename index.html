@@ -2,10 +2,10 @@
 <html>
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <title>Love Counter</title>
+    <title>Contador de Amor</title>
     <link rel="icon" type="image/x-icon" href="https://i.loli.net/2021/06/03/lFg2V4WUcmkB98G.png">
-    <meta name="language" content="Love_Counter">
-    <meta name="title" content="love-counter">
+    <meta name="language" content="Contador_de_Amor">
+    <meta name="title" content="contador-de-amor">
     <link type="text/css" rel="stylesheet" href="./Love_files/default.css">
     <script type="text/javascript" src="./Love_files/jquery.min.js"></script>
     <script type="text/javascript" src="./Love_files/jscex.min.js"></script>
@@ -21,28 +21,29 @@
 <body>
     <div id="main">
         <div id="error">
-            Dear, your browser does not support the content that is about to be displayed.  
-            Please switch to Google (<a href="http://www.google.cn/chrome/intl/zh-CN/landing_chrome.html?hl=zh-CN&brand=CHMI">Chrome</a>)  
-            or Firefox (<a href="http://firefox.com.cn/download/">Firefox</a>) browser~
+            Amor, tu navegador no soporta el contenido que se va a mostrar.  
+            Por favor usa Google (<a href="http://www.google.cn/chrome/intl/zh-CN/landing_chrome.html?hl=zh-CN&brand=CHMI">Chrome</a>)  
+            o el navegador Firefox (<a href="http://firefox.com.cn/download/">Firefox</a>)~
         </div>
         
         <div id="wrap">
             <div id="text">
                 <div id="code">
-                    <span class="say">I don’t want grand things.</span><br>
-                    <span class="say">I just want quiet mornings with you,</span><br>
-                    <span class="say">Laughter in the kitchen,</span><br>
-                    <span class="say">And soft hands held beneath moonlight.</span><br>
-                    <span class="say">If love is a language, let me speak it with my actions,</span><br>
-                    <span class="say">If love is time, then let mine be spent all on you.</span><br>
-                
-                    <span class="say">Love you so much bby</span>
+                    <span class="say">No quiero cosas grandiosas.</span>
+                    <span class="say">Solo quiero mañanas tranquilas contigo,</span>
+                    <span class="say">risas en la cocina</span>
+                    <span class="say">y manos unidas bajo la luna.</span>
+                    <span class="say">Si el amor es un idioma,</span>
+                    <span class="say">déjame hablarlo con mis acciones.</span>
+                    <span class="say">Si el amor es tiempo,</span>
+                    <span class="say">que el mío sea todo para ti.</span>
+                    <span class="say final-line">Te amo muchísimo</span>
                 </div>
                 
                 
             </div>
             <div id="clock-box">
-                <span>Wai Yan Naing</span>💘<span>Mya Pyae Sone</span>
+                <span>Yordy Cruz</span>💘<span>Evelyn Ibañez</span>
                 <div id="clock"></div>
             </div>
             
@@ -60,10 +61,17 @@
         var musicBtn = document.getElementById('music-btn');
         var cd = document.getElementsByClassName('cd')[0];
 
+        function startMusic() {
+            audio.play().then(function() {
+                cd.classList.add("spin");
+            }).catch(function() {
+                cd.classList.remove("spin");
+            });
+        }
+
         musicBtn.addEventListener('click', function() {
             if (audio.paused) {
-                audio.play();
-                cd.classList.add("spin");
+                startMusic();
             } else {
                 audio.pause();
                 cd.classList.remove("spin");
@@ -127,13 +135,11 @@
             var hold = 1;
 
             canvas.click(function (e) {
-                audio.play();
-                cd.classList.add("spin");
-
                 var offset = canvas.offset(), x, y;
                 x = e.pageX - offset.left;
                 y = e.pageY - offset.top;
                 if (seed.hover(x, y)) {
+                    startMusic();
                     hold = 0;
                     canvas.unbind("click");
                     canvas.unbind("mousemove");
@@ -204,8 +210,8 @@
 
             var textAnimate = eval(Jscex.compile("async", function () {
                 var together = new Date();
-                together.setFullYear(2022, 12, 28);
-                together.setHours(0);
+                together.setFullYear(2026, 4, 9);
+                together.setHours(19);
                 together.setMinutes(0);
                 together.setSeconds(0);
                 together.setMilliseconds(0);

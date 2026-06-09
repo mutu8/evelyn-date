@@ -28,24 +28,34 @@ a {
 }
 
 #text {
-	width: 400px;
+	width: 470px;
 	height: 425px;
-	left: 60px;
-	top: 80px;
+	left: 35px;
+	top: 92px;
 	position: absolute;
+	display: flex;
+	align-items: flex-start;
+	justify-content: center;
 }
 
 #code {
 	display: none;
-	font-size: 16px;
-	line-height: 2.5rem;
+	width: 100%;
+	min-height: 360px;
+	padding-top: 12px;
+	font-size: 18px;
+	line-height: 2rem;
+	text-align: center;
+	text-shadow: 0 1px 8px rgba(90, 35, 48, 0.28);
 }
 
 #clock-box {
 	position: absolute;
-	left: 60px;
+	left: 35px;
 	top: 520px;
+	width: 470px;
 	font-size: 28px;
+	text-align: center;
 	display: none;
 }
 
@@ -55,7 +65,7 @@ a {
 }
 
 #clock {
-	margin-left: 48px;
+	margin-left: 0;
 	font-family: "Luxurious Roman", serif;
 }
 
@@ -81,7 +91,16 @@ a {
 }
 
 .say {
-	margin-left: 5px;
+	display: block;
+	margin: 0 auto;
+	min-height: 2rem;
+	white-space: nowrap;
+}
+
+.final-line {
+	margin-top: 16px;
+	font-size: 20px;
+	font-weight: 700;
 }
 
 /* .space {

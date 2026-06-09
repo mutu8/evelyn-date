@@ -1,17 +1,17 @@
 ## love-note 💕💌
-Personal website for my girl (counting anniversary date and cute animation) using pure HTML, CSS, and JavaScript.
+Sitio web personal para mi chica, con contador de aniversario y una animación bonita, hecho con HTML, CSS y JavaScript puros.
 
-Credit to 'https://guoqi.dev/' 
+Créditos para 'https://guoqi.dev/' 
 
-## 🛠️ Tech Stack
+## 🛠️ Tecnologías
 * **Frontend:** HTML5, Tailwind CSS / CSS3
-* **Logic:** JavaScript (ES6+)
-* **Deployment:** GitHub Pages / Netlify
+* **Lógica:** JavaScript (ES6+)
+* **Despliegue:** GitHub Pages / Netlify
 
-* ## 🌐 Live Demo
-* Check it out here: [waiyanjourney.netlify.app](https://waiyanjourney.netlify.app/)
+* ## 🌐 Demo en vivo
+* Míralo aquí: [waiyanjourney.netlify.app](https://waiyanjourney.netlify.app/)
 
-* ## 📈 Goals
-* This repository is a personal milestone.📑
-* As a programmer, I believe the best way to preserve something precious is to build a record of it.
-* And I want to remember what I did for my fiancé when I was a novice programmer.
+* ## 📈 Objetivos
+* Este repositorio es un recuerdo personal.📑
+* Como programador, creo que la mejor forma de conservar algo precioso es construir un registro de ello.
+* Y quiero recordar lo que hice por mi prometida cuando era un programador principiante.
